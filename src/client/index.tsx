@@ -3,7 +3,6 @@ import * as ReactDOM from "react-dom";
 
 import { Hello } from "./components/Hello";
 
-
 import { Pet } from "../models/Pet";
 
 ReactDOM.render(

@@ -29,5 +29,10 @@ router.get("/:petId", (req, res, next) => {
   res.send("successful operation")
 })
 
+// Uploads an image
+router.post(":petId/uploadImage", (req, res, next) => {
+  res.send("successful operation")
+})
+
 export = router
 
