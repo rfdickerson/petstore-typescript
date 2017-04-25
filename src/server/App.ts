@@ -7,6 +7,7 @@ import * as logger from "morgan"
 
 import * as userRouter from "./routes/UserRouter"
 import * as petRouter from "./routes/PetRouter"
+import * as storeRouter from "./routes/StoreRouter"
 
 /**
  * The server.
