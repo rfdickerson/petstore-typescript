@@ -32,6 +32,8 @@ class App {
   private routes(): void {
     let router = express.Router()
 
+   
+
     this.express.use('/', router) 
 
     router.get("/data.json", (req, res, next) => {
@@ -42,6 +44,8 @@ class App {
 
     router.use('/user', userRouter )
     router.use('/pet', petRouter)
+
+     router.use(express.static('./'))
 
 
   }
