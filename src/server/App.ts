@@ -6,6 +6,7 @@ import * as path from "path"
 import * as logger from "morgan"
 
 import * as userRouter from "./routes/UserRouter"
+import * as petRouter from "./routes/PetRouter"
 
 /**
  * The server.
@@ -30,22 +31,9 @@ class App {
   private routes(): void {
     let router = express.Router()
 
-    router.get('/', (req, res, next) => {
-      res.json({
-        message: 'hello world!'
-      })
-    })
-
-    router.get('/hello', (req, res, next) => {
-      res.json({
-        message: 'hi there!',
-        code: 200,
-        id: 505
-      })
-    })
-
     this.express.use('/', router) 
     router.use('/user', userRouter )
+    router.use('/pet', petRouter)
 
 
   }
