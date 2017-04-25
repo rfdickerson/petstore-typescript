@@ -32,13 +32,12 @@ class App {
   private routes(): void {
     let router = express.Router()
 
-   
-
     this.express.use('/', router) 
 
     router.get("/data.json", (req, res, next) => {
       res.json({
-         message: 'hello world!'
+         message: 'I came from the server',
+         code: 200
        })
     })
 
