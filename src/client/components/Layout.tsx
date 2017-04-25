@@ -4,6 +4,7 @@ import { MessageBox } from "./MessageBox";
 
 // models
 import { Pet } from "../../models/Pet";
+import { ApiResponse } from "../../models/ApiResponse";
 
 interface LayoutState {
     code: number
@@ -23,15 +24,22 @@ export class Layout extends React.Component<undefined, LayoutState> {
     loadData() {
         fetch("data.json")
             .then(response => response.json()) 
+            .then ( json => {
+
+            })
             .then( (json: any) => {
 
                 console.log(json)
 
-                let r: LayoutState = json
+                let r: ApiResponse = json
+
+                console.log(r)
 
                 this.setState( {message : r.message })
 
             })
+            .catch ()
+
     }
 
     componentDidMount() {

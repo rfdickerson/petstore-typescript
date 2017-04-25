@@ -9,6 +9,8 @@ import * as userRouter from "./routes/UserRouter"
 import * as petRouter from "./routes/PetRouter"
 import * as storeRouter from "./routes/StoreRouter"
 
+import {ApiResponse} from "../models/ApiResponse"
+
 /**
  * The server.
  */
@@ -35,10 +37,15 @@ class App {
     this.express.use('/', router) 
 
     router.get("/data.json", (req, res, next) => {
-      res.json({
-         message: 'I came from the server',
-         code: 200
-       })
+
+      let s: ApiResponse = {
+        message: "hello",
+        code: 200,
+        type: "h"
+      }
+
+
+      res.json(s)
     })
 
     router.use('/user', userRouter )
