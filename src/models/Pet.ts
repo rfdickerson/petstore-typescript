@@ -1,6 +1,16 @@
 
 export interface Pet {
-    id: number;
+
+    id: number
+
+    name: string
+
+    photoUrls: Array<string>
+    
+    tags: Array<string>
+
+    // pet status in the store
+    status: string 
 }
 
 export function printPet(pet: Pet) {

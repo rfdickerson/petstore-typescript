@@ -5,6 +5,8 @@ import * as express from "express"
 import * as path from "path"
 import * as logger from "morgan"
 
+import * as userRouter from "./routes/UserRouter"
+
 /**
  * The server.
  */
@@ -42,8 +44,9 @@ class App {
       })
     })
 
-
     this.express.use('/', router) 
+    router.use('/user', userRouter )
+
 
   }
 
