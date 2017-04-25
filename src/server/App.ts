@@ -39,9 +39,9 @@ class App {
     router.get("/data.json", (req, res, next) => {
 
       let s: ApiResponse = {
-        message: "hello",
+        message: "I came from the server",
         code: 200,
-        type: "h"
+        type: "Interesting message"
       }
 
 
