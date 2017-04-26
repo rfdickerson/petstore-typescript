@@ -1,6 +1,8 @@
 import * as React from "react"
 
+// components
 import { MessageBox } from "./MessageBox";
+import { Button, Panel } from 'react-bootstrap'
 
 // models
 import { Pet } from "../../models/Pet";
@@ -45,10 +47,17 @@ export class Layout extends React.Component<undefined, LayoutState> {
         this.loadData()
     }
 
+    clickedMe() {
+        console.log('I was clicked!')
+    }
+
     render() {
         return (
             <div>
-            <MessageBox code={this.state.code} message={this.state.message} />
-        </div> )
+                <Panel header="Server Message">
+                    {this.state.message}
+                </Panel>
+                <Button onClick={this.clickedMe} bsStyle="primary">Press Me!</Button>
+            </div> )
     }
 }
