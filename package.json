@@ -15,11 +15,10 @@
     "debug": "^2.6.4",
     "express": "^4.15.2",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "redis": "^2.7.1"
   },
   "devDependencies": {
-    "@types/react": "^15.0.22",
-    "@types/react-dom": "^15.5.0",
     "@types/body-parser": "^1.16.3",
     "@types/chai": "^3.5.1",
     "@types/chai-http": "0.0.30",
@@ -29,6 +28,8 @@
     "@types/mocha": "^2.2.41",
     "@types/morgan": "^1.7.32",
     "@types/node": "^7.0.13",
+    "@types/react": "^15.0.22",
+    "@types/react-dom": "^15.5.0",
     "awesome-typescript-loader": "^3.1.2",
     "chai": "^3.5.0",
     "mocha": "^3.3.0",

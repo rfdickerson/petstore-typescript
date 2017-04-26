@@ -1,6 +1,7 @@
 import * as express from 'express'
 
 import { PetService } from '../services/PetService'
+import { Pet } from '../../models/Pet'
 
 let router = express.Router()
 
@@ -8,7 +9,17 @@ let router = express.Router()
 router.post("/", (req, res, next) => {
 
   let service = new PetService()
-  service.addPet()
+
+  let pet: Pet = {
+    id: 1,
+    name: "Scruffy",
+    photoUrls: [],
+    tags: ["dog", "hairy"],
+    status: "normal"
+
+  }
+
+  service.addPet(pet)
   res.send("successful operation")
 
 })
