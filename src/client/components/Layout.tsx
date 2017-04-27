@@ -3,6 +3,7 @@ import * as React from "react"
 // components
 import { MessageBox } from "./MessageBox";
 import { Button, Panel } from 'react-bootstrap'
+import { PetCard } from './PetCard'
 
 // models
 import { Pet } from "../../models/Pet";
@@ -10,7 +11,8 @@ import { ApiResponse, readApiResponse } from "../../models/ApiResponse";
 
 interface LayoutState {
     code: number
-    message: string
+    message: string,
+    pets: Array<Pet>
 }
 
 export class Layout extends React.Component<undefined, LayoutState> {
@@ -19,7 +21,8 @@ export class Layout extends React.Component<undefined, LayoutState> {
         super()
         this.state = { 
             code: 200,
-            message: "hello!"
+            message: "hello!",
+            pets: []
         }
     }
 
@@ -41,6 +44,15 @@ export class Layout extends React.Component<undefined, LayoutState> {
                 console.log(error)
             })
 
+        fetch("pet/4")
+            .then(response => response.json())
+            .then ( (json: any) => {
+
+            })
+            .catch( (error) => {
+                console.log(error)
+            })
+
     }
 
     componentDidMount() {
@@ -58,6 +70,11 @@ export class Layout extends React.Component<undefined, LayoutState> {
                     {this.state.message}
                 </Panel>
                 <Button onClick={this.clickedMe} bsStyle="primary">Press Me!</Button>
+                {
+                    this.state.pets.map((pet) => (
+                        <PetCard currentPet={pet} />
+                    ))
+                }
             </div> )
     }
 }
