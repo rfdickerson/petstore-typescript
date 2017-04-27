@@ -12,7 +12,8 @@ export class PetCard extends React.Component<PetCardProps, undefined> {
     render() {
         return (
             <Panel>
-                <img src="{this.props.currentPet.imageUrls[0]}" />
+                <h1>{this.props.currentPet.name}</h1>
+                <img src={this.props.currentPet.photoUrls[0]} />
             </Panel> )
     }
 }

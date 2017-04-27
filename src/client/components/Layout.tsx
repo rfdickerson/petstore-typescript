@@ -6,7 +6,7 @@ import { Button, Panel } from 'react-bootstrap'
 import { PetCard } from './PetCard'
 
 // models
-import { Pet } from "../../models/Pet";
+import { Pet, readPetJSON } from "../../models/Pet";
 import { ApiResponse, readApiResponse } from "../../models/ApiResponse";
 
 interface LayoutState {
@@ -47,6 +47,14 @@ export class Layout extends React.Component<undefined, LayoutState> {
         fetch("pet/4")
             .then(response => response.json())
             .then ( (json: any) => {
+                console.log(json)
+
+                let pet = readPetJSON(json)
+
+                let newPets = this.state.pets.slice()
+                newPets.push(pet)
+
+                this.setState( {pets: newPets })
 
             })
             .catch( (error) => {
@@ -66,15 +74,17 @@ export class Layout extends React.Component<undefined, LayoutState> {
     render() {
         return (
             <div>
+                
+                {
+                    this.state.pets.map((pet) => (
+                        <PetCard key={pet.id} currentPet={pet} />
+                    ))
+                }
+
                 <Panel header="Server Message">
                     {this.state.message}
                 </Panel>
                 <Button onClick={this.clickedMe} bsStyle="primary">Press Me!</Button>
-                {
-                    this.state.pets.map((pet) => (
-                        <PetCard currentPet={pet} />
-                    ))
-                }
             </div> )
     }
 }
