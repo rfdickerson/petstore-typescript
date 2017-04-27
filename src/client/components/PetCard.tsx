@@ -20,7 +20,7 @@ export class PetCard extends React.Component<PetCardProps, undefined> {
                 {
                  this.props.currentPet.tags.map((tag) => (
                     <Col xs={6} md={1}>
-                        <Label>{tag}</Label>
+                        <Label bsStyle="primary">{tag}</Label>
                     </Col>
                  ))
                 }
