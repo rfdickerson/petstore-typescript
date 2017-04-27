@@ -43,7 +43,7 @@ router.get("/:petId", (req, res, next) => {
     id: 1,
     name: "Scruffy",
     photoUrls: ["https://s-media-cache-ak0.pinimg.com/originals/4e/d2/23/4ed2237e77c5a57da0c5401f8cc549d1.jpg"],
-    tags: ["dog", "hairy"],
+    tags: ["dog", "hairy", "cute"],
     status: "normal"
 
   }

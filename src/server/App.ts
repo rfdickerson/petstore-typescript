@@ -9,7 +9,7 @@ import * as userRouter from "./routes/UserRouter"
 import * as petRouter from "./routes/PetRouter"
 import * as storeRouter from "./routes/StoreRouter"
 
-import { ApiResponse } from "../models/ApiResponse"
+import {ApiResponse} from "../models/ApiResponse"
 
 /**
  * The server.
@@ -30,11 +30,11 @@ class App {
     this.express.use(bodyParser.urlencoded({ extended: false }))
   }
 
-  // Configure Express middleware
+// Configure Express middleware
   private routes(): void {
     let router = express.Router()
 
-    this.express.use('/', router)
+    this.express.use('/', router) 
 
     router.get("/data.json", (req, res, next) => {
 
@@ -48,11 +48,11 @@ class App {
       res.json(s)
     })
 
-    router.use('/user', userRouter)
+    router.use('/user', userRouter )
     router.use('/pet', petRouter)
     router.use('/store', storeRouter)
 
-    router.use(express.static('./'))
+     router.use(express.static('./'))
 
 
   }

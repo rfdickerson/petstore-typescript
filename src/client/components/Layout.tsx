@@ -2,7 +2,7 @@ import * as React from "react"
 
 // components
 import { MessageBox } from "./MessageBox";
-import { Button, Panel } from 'react-bootstrap'
+import { Button, Panel, PageHeader, Grid, Row, Col, Thumbnail } from 'react-bootstrap'
 import { PetCard } from './PetCard'
 
 // models
@@ -19,7 +19,7 @@ export class Layout extends React.Component<undefined, LayoutState> {
 
     constructor() {
         super()
-        this.state = { 
+        this.state = {
             code: 200,
             message: "hello!",
             pets: []
@@ -28,8 +28,8 @@ export class Layout extends React.Component<undefined, LayoutState> {
 
     loadData() {
         fetch("data.json")
-            .then(response => response.json()) 
-            .then( (json: any) => {
+            .then(response => response.json())
+            .then((json: any) => {
 
                 console.log(json)
 
@@ -37,16 +37,16 @@ export class Layout extends React.Component<undefined, LayoutState> {
 
                 console.log(r)
 
-                this.setState( {message : r.message })
+                this.setState({ message: r.message })
 
             })
-            .catch ( (error) => {
+            .catch((error) => {
                 console.log(error)
             })
 
         fetch("pet/4")
             .then(response => response.json())
-            .then ( (json: any) => {
+            .then((json: any) => {
                 console.log(json)
 
                 let pet = readPetJSON(json)
@@ -54,10 +54,10 @@ export class Layout extends React.Component<undefined, LayoutState> {
                 let newPets = this.state.pets.slice()
                 newPets.push(pet)
 
-                this.setState( {pets: newPets })
+                this.setState({ pets: newPets })
 
             })
-            .catch( (error) => {
+            .catch((error) => {
                 console.log(error)
             })
 
@@ -74,17 +74,25 @@ export class Layout extends React.Component<undefined, LayoutState> {
     render() {
         return (
             <div>
-                
+
+                <PageHeader>Pet Store</PageHeader>
+
+                <Grid>
+                    <Row>
+                        <Col xs={6} md={4}>
                 {
                     this.state.pets.map((pet) => (
                         <PetCard key={pet.id} currentPet={pet} />
                     ))
                 }
+                        </Col>
+                    </Row>
+                </Grid>
 
                 <Panel header="Server Message">
                     {this.state.message}
                 </Panel>
                 <Button onClick={this.clickedMe} bsStyle="primary">Press Me!</Button>
-            </div> )
+            </div>)
     }
 }
