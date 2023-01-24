@@ -251,6 +251,12 @@
   version "15.0.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.22.tgz#50803cde8d89f60a9b034f2dd0d619bc5f0273b5"
 
+"@types/redis@^0.12.36":
+  version "0.12.36"
+  resolved "https://registry.yarnpkg.com/@types/redis/-/redis-0.12.36.tgz#61df652a269af425fe2e9ee95cdfa175577b4c3b"
+  dependencies:
+    "@types/node" "*"
+
 "@types/serve-static@*":
   version "1.7.31"
   resolved "https://registry.yarnpkg.com/@types/serve-static/-/serve-static-1.7.31.tgz#15456de8d98d6b4cff31be6c6af7492ae63f521a"
@@ -1367,8 +1373,8 @@ typescript@^2.2.2:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.3.0.tgz#2e63e09284392bc8158a2444c33e2093795c0418"
 
 ua-parser-js@^0.7.9:
-  version "0.7.12"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
+  version "0.7.33"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.33.tgz#1d04acb4ccef9293df6f70f2c3d22f3030d8b532"
 
 uncontrollable@^4.1.0:
   version "4.1.0"
